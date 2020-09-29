@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 //Algorithm from Intro to Algorithms 3rd Ed by CLRS
 
 public class insertionSort {
@@ -21,15 +22,19 @@ public class insertionSort {
 	}
 
 	public static void main(String args[]) {
-		int array[] = new int[10];
-
-		for (int i = 0; i < array.length; i++) {
-			array[i] = (int) (Math.random() * 100);
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter Array Size: ");
+		int arraySize = sc.nextInt();
+		int array[] = new int[arraySize];
+	
+		for (int i = 0; i < arraySize; i++) {
+			System.out.print("Enter Values: ");
+			array[i] = sc.nextInt();
 		}
-		System.out.println("Randomize Array:      " + Arrays.toString(array));
-
+		
+		System.out.println("User Input Array:     " + Arrays.toString(array));
 		insertionSort object = new insertionSort();
 		object.sort(array);
-		System.out.println("Insertion sort Array: " + Arrays.toString(array));
+		System.out.println("Insertion Sort Array: " + Arrays.toString(array));
 	}
 }
