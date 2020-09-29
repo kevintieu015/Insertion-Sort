@@ -9,7 +9,7 @@ public class insertionSort {
 		for (int j = 1; j < array.length; ++j) {
 			int key = array[j];
 			int i = j - 1;
-			// this
+			
 			while (i >= 0 && array[i] > key) {
 				array[i + 1] = array[i];
 				i = i - 1;
@@ -18,5 +18,18 @@ public class insertionSort {
 
 			array[i + 1] = key;
 		}
+	}
+
+	public static void main(String args[]) {
+		int array[] = new int[10];
+
+		for (int i = 0; i < array.length; i++) {
+			array[i] = (int) (Math.random() * 100);
+		}
+		System.out.println("Randomize Array:      " + Arrays.toString(array));
+
+		insertionSort object = new insertionSort();
+		object.sort(array);
+		System.out.println("Insertion sort Array: " + Arrays.toString(array));
 	}
 }
